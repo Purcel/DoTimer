@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">DoTimer</string>
+
+    <!--  Menu item name  -->
+    <string name="menu_about">About</string>
+    <string name="menu_billing">Buy me a coffee</string>
+
+    <!--  Dial text  -->
+    <!--  Is preferable to have the same length.  -->
+    <string name="dial_sec_description">Sec </string>
+    <string name="dial_min_description">Min </string>
+    <string name="dial_hor_description">Hour</string>
+
+    <!--  Counter  -->
+    <string name="main_counter_init_value" translatable="false">00</string>
+
+    <!--  Action bottom sheet  -->
+    <string name="action_bottom_sheet_title">Actions</string>
+    <string name="action_bottom_sheet_stop_music_name">Music off</string>
+    <string name="action_bottom_sheet_flashlight_on_name">Flashlight on</string>
+    <string name="action_bottom_sheet_alarm_name">Alarm</string>
+
+    <!--  Permission rationale  -->
+    <string name="permission_rationale_text">The alarm won\'t work without \nNotification Permission enabled!</string>
+    <string name="permission_rationale_grant_button">Grant</string>
+
+    <!--  Notification StopMusic  -->
+    <string name="notification_stop_music_title">Music off</string>
+    <string name="notification_stop_music_description">Time expired and the Music was turned off!</string>
+
+    <!--  Notification Alarm  -->
+    <string name="notification_alarm_description">Time\'s up!</string>
+    <string name="notification_alarm_button_name">Stop</string>
+
+    <!--  Notification FlashLight On  -->
+    <string name="notification_flashlight_on_title">Flashlight on</string>
+    <string name="notification_flashlight_on_description">Time expired and the Flashlight was turned on!</string>
+    <string name="notification_flashlight_on_button">Turn OFF</string>
+
+    <!--  Notification channels  -->
+    <string name="notification_channel_alarm_name">Alarm</string>
+    <string name="notification_channel_name">Timer</string>
+    <string name="notification_channel_alarm_desc">DoTimer alarm notification channel</string>
+    <string name="notification_channel_desc">DoTimer notification channel</string>
+
+    <!--  Fullscreen alarm notification  -->
+    <string name="activity_fullscreen_button_name">Stop</string>
+    <string name="activity_fullscreen_init_value" translatable="false">00</string>
+
+    <!--  About activity  -->
+    <string name="about_content">This is an open source Android app. The source code is available on</string>
+    <string name="github_button_name" translatable="false">GitHub</string>
+    <string name="github_privacy_policy_link_name">Privacy policy</string>
+    <string name="github_link" translatable="false">https://github.com/Purcel/DoTimer</string>
+    <string name="github_policy_link" translatable="false">https://github.com/Purcel/DoTimer/blob/master/PRIVACY_POLICY.md</string>
+
+    <!--  Accessibility  -->
+    <string name="buttonStartPauseContentDescription">Start or Pause</string>
+    <string name="buttonStopContentDescription">Stop</string>
+    <string name="buttonChoseActionContentDescription">Actions</string>
+</resources>

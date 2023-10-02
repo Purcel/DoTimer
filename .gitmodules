@@ -1,0 +1,6 @@
+[submodule "dial-picker"]
+	path = dial-picker
+	url = https://github.com/Purcel/dial-picker.git
+[submodule "dotimer-billing"]
+	path = dotimer-billing
+	url = https://github.com/Purcel/dotimer-billing.git

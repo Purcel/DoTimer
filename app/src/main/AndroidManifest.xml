@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
+        android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!--android:roundIcon="@mipmap/ic_launcher_round"-->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Timer">
+        <receiver
+            android:name="com.iulu.dotimer.timer.NotificationActionButtonReceiver"
+            android:enabled="true"
+            android:exported="false">
+
+        </receiver>
+
+        <activity
+            android:name="com.iulu.dotimer.ui.FullscreenAlarmNotification"
+            android:exported="false"
+            android:finishOnCloseSystemDialogs="true"
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.Timer.FullscreenAlarm" />
+
+        <activity
+            android:name="com.iulu.dotimer.ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.iulu.dotimer.timer.TimeExpiredReceiver"
+            android:enabled="true"
+            android:exported="false">
+
+        </receiver>
+
+        <service
+            android:name="com.iulu.dotimer.timer.AlarmService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="shortService">
+
+        </service>
+    </application>
+
+</manifest>

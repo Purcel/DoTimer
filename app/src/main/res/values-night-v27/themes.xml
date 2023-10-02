@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Timer" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/slate_blue</item>
+        <item name="colorPrimaryVariant">@color/slate_blue_2</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Needed by Material3 -->
+        <item name="colorOnSurface">@color/slate_blue</item>
+        <item name="colorPrimaryContainer">@color/slate_blue_2</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:ignore="PrivateResource">
+            @color/m3_sys_color_dark_background
+        </item>
+        <item name="android:navigationBarColor" tools:ignore="PrivateResource">
+            @color/m3_sys_color_dark_background
+        </item>
+        <!---->
+        <item name="chipIconTint">@color/slate_blue</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+
+</resources>
