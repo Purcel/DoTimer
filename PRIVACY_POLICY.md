@@ -13,7 +13,7 @@ information.
 
 The list of permissions required by the app can be found in the `AndroidManifest.xml` file:
 
-
+https://github.com/Purcel/DoTimer/blob/f191c6a6f678627c51b0c8a6848735b7599dbd9d/app/src/main/AndroidManifest.xml#L4-L9
 
 <br/>
 
