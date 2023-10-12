@@ -83,30 +83,32 @@ class AlarmService : Service() {
         return null
     }
 
-    private lateinit var player: MediaPlayer
+    private var player: MediaPlayer? = null
     private fun playSound() {
         val channel = getNotificationChannel(this, CHANNEL_ID_ALARM)
-
-        player = MediaPlayer().apply {
-            setAudioAttributes(
-                AudioAttributes.Builder()
-                    .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
-                    //.setLegacyStreamType(AudioManager.STREAM_ALARM)
-                    .setUsage(AudioAttributes.USAGE_ALARM)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build()
-            )
-            setDataSource(this@AlarmService, channel.sound)
-            isLooping = true
-            prepare()
-            start()
+        if (channel.sound != null) {
+            player = MediaPlayer().apply {
+                setAudioAttributes(
+                    AudioAttributes.Builder()
+                        .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
+                        .setUsage(AudioAttributes.USAGE_ALARM)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build()
+                )
+                setDataSource(this@AlarmService, channel.sound)
+                isLooping = true
+                prepare()
+                start()
+            }
         }
     }
 
     private fun stopSound() {
-        player.stop()
-        player.reset()
-        player.release()
+        player?.apply {
+            stop()
+            reset()
+            release()
+        }
     }
 }
 

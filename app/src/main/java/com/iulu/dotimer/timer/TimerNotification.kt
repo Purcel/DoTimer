@@ -34,8 +34,9 @@ class TimerNotification(private val context: Context) {
         ) {
             val channel = NotificationChannel(id, name, importance).apply {
                 this.description = description
-                this.lockscreenVisibility = Notification.VISIBILITY_PUBLIC
-                //setSound(null, null)
+                lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+                if (id != CHANNEL_ID_ALARM)
+                    setSound(null, null)
             }
             val notificationManager: NotificationManager =
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -145,7 +146,6 @@ class TimerNotification(private val context: Context) {
                 setCategory(Notification.CATEGORY_ALARM)
                 setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 setOngoing(true)
-                //setSilent(true)
                 setAutoCancel(true)
                 build()
             }

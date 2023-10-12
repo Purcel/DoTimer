@@ -11,8 +11,10 @@ package com.iulu.dotimer
 import android.content.Context
 import android.content.Intent
 import androidx.annotation.DrawableRes
+import androidx.core.app.NotificationManagerCompat
 import com.iulu.dotimer.timer.ALARM_EVENT_BUTTON_STOP
 import com.iulu.dotimer.timer.AlarmService
+import com.iulu.dotimer.timer.NOTIFICATION_ID
 import com.iulu.dotimer.timer.NotificationActionButton
 import com.iulu.dotimer.timer.TimerNotification.Companion.showNotification
 import com.iulu.dotimer.timer.TimerPref
@@ -64,6 +66,14 @@ object DoTimerNotification {
         context.apply {
             showNotification(title, description, buttonAction)
         }
+    }
+
+    /**
+     * Cancel notification.
+     * @param context App Context.
+     * */
+    fun cancelNotification(context: Context) {
+        NotificationManagerCompat.from(context).cancel(NOTIFICATION_ID)
     }
 }
 

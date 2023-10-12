@@ -43,7 +43,7 @@ class Timer(private val context: Activity) {
                 CHANNEL_ID,
                 getString(R.string.notification_channel_name),
                 getString(R.string.notification_channel_desc),
-                NotificationManager.IMPORTANCE_DEFAULT
+                NotificationManager.IMPORTANCE_HIGH
             )
         }
         TimerPref.apply {

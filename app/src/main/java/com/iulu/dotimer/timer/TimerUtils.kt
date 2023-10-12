@@ -13,7 +13,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Build
-import kotlin.reflect.full.functions
 
 fun Context.sendBroadcast(string: String = "", action: String) {
     sendBroadcast(Intent(action).apply { putExtra("STRING", string) })
@@ -62,7 +61,10 @@ fun Context.addLongBroadcast(action: String, block: (Long) -> Unit): BroadcastRe
     return receiver
 }
 
-fun String.callObj(member: String, context: Context, vararg params: Any): Any? =
-    Class.forName(this).kotlin.run {
-        functions.last { it.name == member }.call(objectInstance, context, *params)
+fun String.callObj(member: String, context: Context, vararg params: Any): Any? {
+    val clas = Class.forName(this)
+    val inst = clas.getDeclaredConstructor().newInstance()
+    return clas.declaredMethods.run {
+        last { it.name == member }.invoke(inst, context, *params)
     }
+}

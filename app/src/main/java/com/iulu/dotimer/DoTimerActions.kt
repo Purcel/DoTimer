@@ -87,5 +87,6 @@ object TimerActionFlashLight : ITimerAction {
             cameraManager.setTorchMode("0", false)
         } catch (_: CameraAccessException) {
         }
+        DoTimerNotification.cancelNotification(context)
     }
 }
