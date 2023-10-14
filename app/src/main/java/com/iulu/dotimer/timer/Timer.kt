@@ -61,9 +61,9 @@ class Timer(private val context: Activity) {
             PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             if (alarmManager.canScheduleExactAlarms())
-                alarmManager.setExact(RTC_WAKEUP, wakeUpTime, pendingIntent)
+                alarmManager.setExactAndAllowWhileIdle(RTC_WAKEUP, wakeUpTime, pendingIntent)
         } else
-            alarmManager.setExact(RTC_WAKEUP, wakeUpTime, pendingIntent)
+            alarmManager.setExactAndAllowWhileIdle(RTC_WAKEUP, wakeUpTime, pendingIntent)
         TimerPref.saveWakeupTime(context, wakeUpTime)
     }
 
